@@ -94,8 +94,6 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias of="xdg-open"
-#always verbose for file manipulation
 #alias \
 #	rm="rm -v" \
 #	cp="cp -v" \
@@ -130,7 +128,7 @@ ex ()
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
@@ -145,6 +143,9 @@ ex ()
   fi
 }
 
+# open any filetype
+of()     { xdg-open "$@" 2> /dev/null; }
+
 #execute ls after file-manipulation commands
 c()      { command cd "$@"; ls; }
 rm()     { command rm "$@"; ls; }
@@ -153,5 +154,3 @@ mv()     { command mv "$@"; ls; }
 mkdir()  { command mkdir "$@"; ls; }
 rmdir()  { command rmdir "$@"; ls; }
 touch()  { command touch "$@"; ls; }
-
-
