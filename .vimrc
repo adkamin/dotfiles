@@ -6,3 +6,9 @@ syntax on                      " Enable syntax highlighting.
 
 set mouse=a                    " Enable the mouse in vim.
 set viminfo=""                 " Disable viminfo files.
+
+call plug#begin('~/.vim/plugged')
+	Plug 'adkamin/gruvbox'      " Gruvbox color theme.
+call plug#end()
+
+colorscheme gruvbox
