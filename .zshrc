@@ -10,11 +10,39 @@ zmodload zsh/complist
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
-# Autosuggestions plugin
-PLUG=/usr/share/zsh/plugins
-source $PLUG/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $PLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $PLUG/zsh-history-substring-search/zsh-history-substring-search.zsh
+# TODO set zsh theme to gruvbox
+
+# Plugins
+plugins=(
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	zsh-history-substring-search
+)
+
+# Shortcuts for paths
+alias -g dl="$HOME/Downloads"
+alias -g dc="$HOME/Documents"
+alias -g b="$HOME/builds"
+alias -g ic="$HOME/Documents/current/ic"
+alias -g nds="$HOME/Documents/current/nds"
+alias -g ns="$HOME/Documents/current/ns"
+alias -g rms="$HOME/Documents/current/rm"
+alias -g pc="$HOME/Documents/current/pc"
+
+# Other aliases
+alias v="$EDITOR"
+
+# Open any filetype
+o()     { xdg-open "$@" 2> /dev/null; } 
+
+# Execute ls after file-manipulation commands
+c()   { builtin cd "$@"; ls; }
+rm()  { command rm "$@"; ls; }
+cp()  { command cp "$@"; ls; }
+mv()  { command mv "$@"; ls; }
+md()  { command mkdir "$@"; ls; }
+rd()  { command rmdir "$@"; ls; }
+t()   { command touch "$@"; ls; }
 
 # Extract archives
 ex ()
@@ -37,27 +65,6 @@ ex ()
   else
     echo "'$1' is not a valid file"
   fi
+  rm "$1"
 }
 
-# Shortcuts for paths
-alias -g dl="$HOME/Downloads"
-alias -g dc="$HOME/Documents"
-alias -g b="$HOME/builds"
-alias -g ic="$HOME/Documents/current/ic"
-alias -g nds="$HOME/Documents/current/nds"
-alias -g ns="$HOME/Documents/current/pc"
-alias -g rms="$HOME/Documents/current/rm"
-
-# Other aliases
-alias v="$EDITOR"
-
-o()     { xdg-open "$@" 2> /dev/null; }  # Open any filetype
-
-# Execute ls after file-manipulation commands
-c()   { builtin cd "$@"; ls; }
-rm()  { command rm "$@"; ls; }
-cp()  { command cp "$@"; ls; }
-mv()  { command mv "$@"; ls; }
-md()  { command mkdir "$@"; ls; }
-rd()  { command rmdir "$@"; ls; }
-t()   { command touch "$@"; ls; }
