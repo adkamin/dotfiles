@@ -4,7 +4,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
 
-# Auto completion is case insensitive and has a nice menu.
+# Auto completion is case insensitive and has a nice menu
 autoload -Uz compinit && compinit
 zmodload zsh/complist
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
@@ -39,16 +39,25 @@ ex ()
   fi
 }
 
-# Open any filetype
-o()     { xdg-open "$@" 2> /dev/null; }
+# Shortcuts for paths
+alias -g dl="$HOME/Downloads"
+alias -g dc="$HOME/Documents"
+alias -g b="$HOME/builds"
+alias -g ic="$HOME/Documents/current/ic"
+alias -g nds="$HOME/Documents/current/nds"
+alias -g ns="$HOME/Documents/current/pc"
+alias -g rms="$HOME/Documents/current/rm"
+
+# Other aliases
+alias v="$EDITOR"
+
+o()     { xdg-open "$@" 2> /dev/null; }  # Open any filetype
 
 # Execute ls after file-manipulation commands
-c()      { builtin cd "$@"; ls; }
-rm()     { command rm "$@"; ls; }
-cp()     { command cp "$@"; ls; }
-mv()     { command mv "$@"; ls; }
-mkdir()  { command mkdir "$@"; ls; }
-rmdir()  { command rmdir "$@"; ls; }
-touch()  { command touch "$@"; ls; }
-ex()     { command ex() "$@"; ls; }
-
+c()   { builtin cd "$@"; ls; }
+rm()  { command rm "$@"; ls; }
+cp()  { command cp "$@"; ls; }
+mv()  { command mv "$@"; ls; }
+md()  { command mkdir "$@"; ls; }
+rd()  { command rmdir "$@"; ls; }
+t()   { command touch "$@"; ls; }
