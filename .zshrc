@@ -3,6 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
+setopt hist_ignore_all_dups
 
 # Auto completion is case insensitive and has a nice menu
 autoload -Uz compinit && compinit
@@ -10,14 +11,11 @@ zmodload zsh/complist
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
-# TODO set zsh theme to gruvbox
-
 # Plugins
-plugins=(
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	zsh-history-substring-search
-)
+PLUG=/usr/share/zsh/plugins
+source $PLUG/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $PLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $PLUG/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Shortcuts for paths
 alias -g dl="$HOME/Downloads"
@@ -67,4 +65,3 @@ ex ()
   fi
   rm "$1"
 }
-
