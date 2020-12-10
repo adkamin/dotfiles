@@ -18,17 +18,18 @@ source $PLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PLUG/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Shortcuts for paths
+alias -g b="$HOME/builds"
 alias -g dl="$HOME/Downloads"
 alias -g dc="$HOME/Documents"
-alias -g b="$HOME/builds"
-alias -g ic="$HOME/Documents/current/ic"
-alias -g nds="$HOME/Documents/current/nds"
-alias -g ns="$HOME/Documents/current/ns"
-alias -g rms="$HOME/Documents/current/rm"
-alias -g pc="$HOME/Documents/current/pc"
+alias -g cr="$HOME/Documents/current"
+alias -g fp="$HOME/Documents/current/fp"
+alias -g and="$HOME/Documents/current/and"
+alias -g ko="$HOME/Documents/current/ko"
+alias -g aw="$HOME/Documents/current/aw"
 
 # Other aliases
 alias v="$EDITOR"
+alias ls="ls --color=always"
 
 # Open any filetype
 o()     { xdg-open "$@" 2> /dev/null; } 
