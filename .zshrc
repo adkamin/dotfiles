@@ -17,6 +17,9 @@ source $PLUG/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PLUG/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+# Custom theme
+PROMPT='%F{#458588}%n@%m %F{white}➢%f '
+
 # Shortcuts for paths
 alias -g b="$HOME/builds"
 alias -g dl="$HOME/Downloads"
