@@ -21,14 +21,18 @@ source $PLUG/zsh-history-substring-search/zsh-history-substring-search.zsh
 PROMPT='%F{#458588}%n@%m %F{white}➢%f '
 
 # Shortcuts for paths
-alias -g b="$HOME/builds"
+alias -g bu="$HOME/Builds"
 alias -g dl="$HOME/Downloads"
-alias -g dc="$HOME/Documents"
-alias -g cr="$HOME/Documents/current"
-alias -g fp="$HOME/Documents/current/fp"
-alias -g and="$HOME/Documents/current/and"
-alias -g ko="$HOME/Documents/current/ko"
-alias -g aw="$HOME/Documents/current/aw"
+alias -g dc="$HOME/Nextcloud"
+alias -g cr="$HOME/Nextcloud/current"
+alias -g ai="$HOME/Nextcloud/current/ai"
+alias -g fp="$HOME/Nextcloud/current/fp"
+alias -g ip="$HOME/Nextcloud/current/ip"
+alias -g se="$HOME/Nextcloud/current/se"
+alias -g th="$HOME/Nextcloud/current/th"
+alias -g hs="$HOME/Nextcloud/current/hs"
+alias -g se="$HOME/Nextcloud/current/se"
+alias -g ph="$HOME/Nextcloud/pictures"
 
 # Other aliases
 alias v="$EDITOR"
@@ -63,9 +67,8 @@ ex ()
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
+    esac && rm "$1"
   else
     echo "'$1' is not a valid file"
   fi
-  rm "$1"
 }
