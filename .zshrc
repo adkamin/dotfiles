@@ -33,6 +33,9 @@ alias -g th="$HOME/Nextcloud/current/th"
 alias -g hs="$HOME/Nextcloud/current/hs"
 alias -g se="$HOME/Nextcloud/current/se"
 alias -g ph="$HOME/Nextcloud/pictures"
+alias -g ot="$HOME/Nextcloud/others"
+alias -g wl="$HOME/Nextcloud/current/th/projects/learningwifi/wifi-learner"
+alias -g sl="$HOME/Nextcloud/current/th/projects/learningwifi/statelearner"
 
 # Other aliases
 alias v="$EDITOR"
