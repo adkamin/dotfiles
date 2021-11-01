@@ -30,4 +30,5 @@ call plug#end()
 colorscheme gruvbox
 au ColorScheme * hi Normal ctermbg=None
 au ColorScheme * hi NonText ctermbg=None
+hi Normal guibg=NONE ctermbg=NONE
 "au ColorScheme * hi Todo ctermbg=None
