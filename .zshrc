@@ -23,19 +23,7 @@ PROMPT='%F{#458588}%n@%m %F{white}➢%f '
 # Shortcuts for paths
 alias -g bu="$HOME/Builds"
 alias -g dl="$HOME/Downloads"
-alias -g dc="$HOME/Nextcloud"
-alias -g cr="$HOME/Nextcloud/current"
-alias -g ai="$HOME/Nextcloud/current/ai"
-alias -g fp="$HOME/Nextcloud/current/fp"
-alias -g ip="$HOME/Nextcloud/current/ip"
-alias -g se="$HOME/Nextcloud/current/se"
-alias -g th="$HOME/Nextcloud/current/th"
-alias -g se="$HOME/Nextcloud/current/se"
-alias -g pi="$HOME/Nextcloud/pictures"
-alias -g mi="$HOME/Nextcloud/misc"
-alias -g wl="$HOME/Nextcloud/current/th/projects/wifi-learner"
-alias -g sl="$HOME/Nextcloud/current/th/projects/statelearner"
-alias -g mm="$HOME/Nextcloud/current/th/projects/LearningMMTs"
+alias -g dc="$HOME/Documents"
 
 # Other aliases
 alias v="$EDITOR"
@@ -49,9 +37,9 @@ c()   { builtin cd "$@"; ls; }
 rm()  { command rm "$@"; ls; }
 cp()  { command cp "$@"; ls; }
 mv()  { command mv "$@"; ls; }
-md()  { command mkdir "$@"; ls; }
-rd()  { command rmdir "$@"; ls; }
-t()   { command touch "$@"; ls; }
+function md  { command mkdir "$@"; ls; }
+function rd  { command rmdir "$@"; ls; }
+function t   { command touch "$@"; ls; }
 
 # Extract archives
 ex ()
