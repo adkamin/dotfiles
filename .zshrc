@@ -11,14 +11,15 @@ zmodload zsh/complist
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
+# Custom theme
+PROMPT='%F{#FF00FF}%n@%m %F{white}➢%f '
+alias ls="ls --color=always"
+
 # Plugins
 PLUG=/usr/share/zsh/plugins
 source $PLUG/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PLUG/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-# Custom theme
-PROMPT='%F{#458588}%n@%m %F{white}➢%f '
 
 # Shortcuts for paths
 alias -g bu="$HOME/Builds"
@@ -27,7 +28,6 @@ alias -g dc="$HOME/Documents"
 
 # Other aliases
 alias v="$EDITOR"
-alias ls="ls --color=always"
 
 # Open any filetype
 o()     { xdg-open "$@" 2> /dev/null; } 
